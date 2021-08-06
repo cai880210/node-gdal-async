@@ -1,3 +1,5 @@
+# node-gyp no more using node-pre-gyp
+
 # node-gdal-async
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
