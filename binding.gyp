@@ -70,7 +70,7 @@
 			"variables": {
 				"debug_extra_ccflags_cc": [ "-fsanitize=address" ],
 				"debug_extra_ldflags" : [ "-fsanitize=address" ]
-			}
+			},
 		}],
 		["enable_coverage == 'true'", {
 			"variables": {
@@ -147,41 +147,6 @@
 						}]
 					]
 				}]
-			]
-		},
-		{
-			"target_name": "action_after_build",
-			"type": "none",
-			"dependencies": [ "<(module_name)" ],
-			"conditions": [
-				['OS != "win"', {
-					"actions": [
-						{
-							"action_name": "yatag",
-							"inputs":  [ "<@(sources_node_gdal)", "lib/gdal.js" ],
-							"outputs": [ "../lib/index.d.ts" ],
-							"action": [ "npm", "run", "yatag" ]
-						}
-					]
-				}],
-				['OS == "win"', {
-					"actions": [
-						{
-							"action_name": "yatag",
-							"inputs":  [ "<@(sources_node_gdal)", "lib/gdal.js" ],
-							"outputs": [ "lib/index.d.ts" ],
-							"action": [ "npm run yatag" ]
-						}
-					]
-				}],
-			],
-			"copies": [
-				{
-					"files": [
-						"<(PRODUCT_DIR)/gdal.node"
-					],
-					"destination": "<(module_path)"
-				}
 			]
 		}
 	]
