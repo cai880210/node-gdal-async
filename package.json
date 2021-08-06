@@ -21,17 +21,6 @@
     "geojson",
     "mapping"
   ],
-  "binary": {
-    "module_name": "gdal",
-    "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
-    "remote_path": "v{version}",
-    "host": "https://github.com/mmomtchev/node-gdal-async/releases/download/",
-    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "hosting": {
-      "provider": "github",
-      "repo": "mmomtchev/node-gdal-async"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mmomtchev/node-gdal-async.git"
@@ -57,7 +46,6 @@
     "lint:js": "eslint lib test examples",
     "lint:fix": "eslint lib test examples --fix",
     "lint": "npm run lint:js && npm run lint:cpp",
-    "install": "node-pre-gyp install --fallback-to-build -j max",
     "yatag": "npx yatag",
     "yuidoc": "yuidoc --extension .js,.cpp,.hpp",
     "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js",
